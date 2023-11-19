@@ -40,19 +40,15 @@ def user_choice():
 show_menu()
 
 while True:
-    choice = user_choice()  # Get the user's choice once
-    if choice == 1:
+    uniq_chose = user_choice()  # Get the user's choice once
+    if uniq_chose == 1:
         last_todo()
-    elif choice == 2:
+    elif uniq_chose == 2:
         add_new_todo()
-    elif choice == 3:
+    elif uniq_chose == 3:
         break  
     else:
         print("Invalid choice. Please enter 1, 2, or 3.")
-
- 
-    
-        
 
 
 
