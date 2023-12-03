@@ -1,6 +1,7 @@
 from tkinter import ttk
 from tkinter import Tk, Frame, Label, Button, LabelFrame, Toplevel, Entry
 
+
 root = Tk()
 root.title("Task Manager")
 root.config(bg = "white")
@@ -45,6 +46,25 @@ class Add_Del_Button:
     def __init__(self, master):
         self.top_lvl = Toplevel(master)
         self.top_lvl.geometry("450x200+160+120")
+        self.label_f_name = Label(self.top_lvl, text = "First name")
+        self.label_l_name = Label(self.top_lvl, text = "Last name")
+        self.label_w_hours = Label(self.top_lvl, text = "Working hours")
+        self.f_name = Entry(self.top_lvl)
+        self.l_name = Entry(self.top_lvl)
+        self.w_hours = Entry(self.top_lvl)
+        self.save = Button(self.top_lvl, text = "Print and quit")
+        self.placing_labels()
+        self.placing_entries()
+
+    def placing_labels(self):
+        label_widgets = [self.label_f_name, self.label_l_name, self.label_w_hours]
+        for place, widget in enumerate(label_widgets):
+            widget.grid(column = 0, row = place, padx = 10, pady = 5)
+    
+    def placing_entries(self):
+        entries = [self.f_name, self.l_name, self.w_hours, self.save]
+        for place, widget in enumerate(entries):
+            widget.grid(column = 1, row = place, padx = 10, pady = 5)
 
 class TaskLabel:
 
@@ -88,7 +108,4 @@ class PlaningLabel:
 
 frame1 = MainFrames(root)
 root.mainloop()
-
-
-
-        
+      
