@@ -1,20 +1,27 @@
 from interface import MainFrames, Add_Del_Button, root
 
-class Employee:
+
+class Employee_Manager:
     def __init__(self):
         self.employee_list = {}
-
+    
     def add_employee(self):
-        self.f_name = Add_Del_Button.f_name
-        self.l_name = Add_Del_Button.l_name
+        self.first_name = add_button.f_name.get()
+        self.working_hours = add_button.w_hours.get()
+        #self.employee_list[self.first_name] = self.working_hours
+        print(f"{self.first_name} and {self.working_hours}")
         
-        print (self.f_name, self.l_name)
+        #print(self.employee_list)
 
 
-class Task:
-    def __init__(self):
-        pass
-
-frame1 = MainFrames(root)
-command = Add_Del_Button.save(command = Employee.add_employee)
+frame = MainFrames(root)
+the_employee_manager = Employee_Manager()
+add_button = Add_Del_Button(frame)
+add_button.save.config(command = the_employee_manager.add_employee())
+add_button.save.destroy()
 root.mainloop()
+
+
+        
+    
+

@@ -1,7 +1,6 @@
 from tkinter import ttk
 from tkinter import Tk, Frame, Label, Button, LabelFrame, Toplevel, Entry
 
-
 root = Tk()
 root.title("Task Manager")
 root.config(bg = "white")
@@ -14,14 +13,11 @@ class MainFrames:
         self.left_frame.grid(column = 0, row = 0)
         self.right_frame = Frame(master, name = "right frame")
         self.right_frame.grid(column = 1, row = 0, sticky = "n")
-        self.labels()
-
-    def labels(self):
-        label_1 = EmployeesLabel(self.left_frame)
-        label_2 = TaskLabel(self.left_frame)
-        label_3 = LogsFrame(self.left_frame)
-        label_4 = PlaningLabel(self.right_frame)
-
+      
+        self.label_1 = EmployeesLabel(self.left_frame)
+        self.label_2 = TaskLabel(self.left_frame)
+        self.label_3 = LogsFrame(self.left_frame)
+        self.label_4 = PlaningLabel(self.right_frame)
 class EmployeesLabel:
 
     def __init__(self, master):
@@ -71,7 +67,7 @@ class TaskLabel:
     def __init__(self, master):
         self.task_label = LabelFrame(master, name = "task label")
         self.task_label.grid(column = 0, row = 1, padx = 20, pady = 20)
-        self.import_task = Button(self.task_label, text = "Import the tasks")
+        self.import_task = Button(self.task_label, text = "View the tasks")
         self.add_task = Button(self.task_label, text = "add a tasks")
         self.del_task = Button(self.task_label, text = "Delete a tasks")
 
